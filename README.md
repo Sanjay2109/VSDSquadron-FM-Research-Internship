@@ -32,7 +32,7 @@
     CLKHF : Output connected to internal int_osc signal
   
 + **Frequency counter logic driven by the internal oscillator:**
-+ 
+  
   A frequency counter measures the frequency of an input signal by counting how many pulses occur within a fixed time period.
   
 + **RGB LED driver instantiation with defined current parameters:**  
@@ -56,7 +56,18 @@ The internal timing source of the module is a high-frequency oscillator (SB_HFOS
    + Fixed setup: maximum brightness blue LED (RGB2PWM = 1'b1)  
    + Lowest brightness red and green LEDs (RGB0PWM = RGB1PWM = 1'b0)  
 
+## STEP-1 Understanding the Verilog Code:  
 
+### **1. Accessing the PCL file:**
+[PCL file link](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf)  
 
+### **2. Understanding the pin assignments from the PCF file:**
++ This snippet is used in FPGA constraint files to assign physical pins to signals in Verilog design.
++ ``set_io led_red 39`` ==>  Maps led_red signal to pin 39.
++ ``set_io led_red 40`` ==>  Maps led_red signal to pin 40.
++ ``set_io led_red 41`` ==>  Maps hw_clk (hardware clock input) to pin 20.
++ ``set_io hw_clk 20`` ==>  Maps led_red signal to pin 42.
++ ``set_io testwire 17`` ==>  Maps testwire (output signal) to pin 17.
 
-
+### **3. Verifying the correctness of the assignments:**
+[Datasheet file link](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf)  
