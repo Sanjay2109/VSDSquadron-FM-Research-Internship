@@ -1,4 +1,4 @@
-# TASK-1
+# TASK-1: Understanding and Implementing the Verilog Code on FM
 
 ## STEP-1 Understanding the Verilog Code:
 
@@ -63,11 +63,35 @@ The internal timing source of the module is a high-frequency oscillator (SB_HFOS
 
 ### **2. Understanding the pin assignments from the PCF file:**
 + This snippet is used in FPGA constraint files to assign physical pins to signals in Verilog design.
-+ ``set_io led_red 39`` ==>  Maps led_red signal to pin 39.
++ ``set_io led_red 39`` ==>  Maps led_red signal to pin 39 allowing the HDL code to control a LED (color red is implied).
 + ``set_io led_red 40`` ==>  Maps led_red signal to pin 40.
-+ ``set_io led_red 41`` ==>  Maps hw_clk (hardware clock input) to pin 20.
++ ``set_io led_red 41`` ==>  Maps hw_clk (hardware clock input) to pin 20 allowing the HDL code to recieve clock inputs through pin 20.
 + ``set_io hw_clk 20`` ==>  Maps led_red signal to pin 42.
-+ ``set_io testwire 17`` ==>  Maps testwire (output signal) to pin 17.
++ ``set_io testwire 17`` ==>  Maps testwire (output signal) to pin 17 for testing or debugging purposes.
 
 ### **3. Verifying the correctness of the assignments:**
-[Datasheet file link](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf)  
+![image info](./assets/pin.png)
+
+## **Step 3: Integrating with the VSDSquadron FPGA Mini Board**
+
+[Datasheet file link](https://www.vlsisystemdesign.com/wp-content/uploads/2025/01/VSDSquadronFMDatasheet.pdf)  
+# Steps to Follow:  
+1. Reviewing the VSDSquadron FPGA Mini board datasheet to understand its features and pinout.    
+2. Using the datasheet to correlate the physical board connections with the PCF file and Verilog code.  
+3. Connecting the board to the computer as described in the datasheet (e.g., using USB-C and ensuring FTDI connection).  
+4. Following the Makefile for building and flashing the Verilog code:  
+Run ``make clean`` to clear any previous builds.  
+Run ``make build`` to compile the design.  
+Run ``sudo make flash`` to program the FPGA board.
+After running ``make clean``, the board should like this: 
+
+https://github.com/user-attachments/assets/befa65dd-69d1-4808-85a6-0e1df87e6657
+## Challenges faced and solutions implemented:
++ Found it difficult to understand Verilog code, certain websites were able to explain this easily.
+
+
+
+
+
+
+
