@@ -56,7 +56,7 @@ The internal timing source of the module is a high-frequency oscillator (SB_HFOS
    + Fixed setup: maximum brightness blue LED (RGB2PWM = 1'b1)  
    + Lowest brightness red and green LEDs (RGB0PWM = RGB1PWM = 1'b0)  
 
-## STEP-1 Understanding the Verilog Code:  
+## STEP-2 Analysis of Connections Established by PCF file:  
 
 ### **1. Accessing the PCL file:**
 [PCL file link](https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf)  
@@ -75,7 +75,7 @@ The internal timing source of the module is a high-frequency oscillator (SB_HFOS
 ## **Step 3: Integrating with the VSDSquadron FPGA Mini Board**
 
 [Datasheet file link](https://www.vlsisystemdesign.com/wp-content/uploads/2025/01/VSDSquadronFMDatasheet.pdf)  
-# Steps to Follow:  
+### Steps to Follow:  
 1. Reviewing the VSDSquadron FPGA Mini board datasheet to understand its features and pinout.    
 2. Using the datasheet to correlate the physical board connections with the PCF file and Verilog code.  
 3. Connecting the board to the computer as described in the datasheet (e.g., using USB-C and ensuring FTDI connection).  
@@ -86,7 +86,7 @@ Run ``sudo make flash`` to program the FPGA board.
 After running ``make clean``, the board should like this: 
 
 https://github.com/user-attachments/assets/befa65dd-69d1-4808-85a6-0e1df87e6657
-## Challenges faced and solutions implemented:
+### Challenges faced and solutions implemented:
 + Found it difficult to understand Verilog code, certain websites were able to explain this easily.
 
 
